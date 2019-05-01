@@ -8,6 +8,8 @@
 
 项目地址：[LazyPagerAdapter](https://github.com/MycroftWong/LazyPagerAdapter)
 
+引用 `implementation 'com.github.MycroftWong:LazyPagerAdapter:v1.0'`
+
 ## 实现
 
 首先构造一个占位`ViewGroup`, 其中包含一个预加载`View`, 当滑动到当前`ViewPager`时，移除预加载的`View`，再添加`Fragment`
