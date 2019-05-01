@@ -26,6 +26,8 @@ public class MainActivity extends AppCompatActivity {
         TabLayout tabLayout = findViewById(R.id.tab_layout);
         viewPager.setAdapter(new ContentPagerAdapter(getSupportFragmentManager(), mData));
         tabLayout.setupWithViewPager(viewPager);
+
+        viewPager.setOffscreenPageLimit(viewPager.getAdapter().getCount() * 2 + 1);
     }
 
     private final List<String> mData = new ArrayList<>();

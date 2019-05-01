@@ -2,6 +2,7 @@ package com.mycroft.sample;
 
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -41,5 +42,7 @@ public class ContentFragment extends Fragment {
         textView.setText(getArguments().getString(ARGS_ITEM));
 
         view.setBackgroundColor(Color.rgb(RANDOM.nextInt(0x100), RANDOM.nextInt(0x100), RANDOM.nextInt(0x100)));
+
+        Log.e("mycroft", "onViewCreated");
     }
 }
