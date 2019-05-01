@@ -6,7 +6,7 @@
 
 这样通常会修改`Fragment`的结构，这里我想到了另一个方法，不修改`Fragment`，而是去修改`FragmentPagerAdapter`
 
-项目地址：[FragmentPagerAdapter](http://baidu.com)
+项目地址：[LazyPagerAdapter](https://github.com/MycroftWong/LazyPagerAdapter)
 
 ## 实现
 
