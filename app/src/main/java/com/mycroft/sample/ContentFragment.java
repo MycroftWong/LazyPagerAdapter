@@ -14,6 +14,9 @@ import androidx.fragment.app.Fragment;
 
 import java.util.Random;
 
+/**
+ * @author mycroft
+ */
 public class ContentFragment extends Fragment {
 
     private static final String ARGS_ITEM = "item.args";
@@ -25,6 +28,12 @@ public class ContentFragment extends Fragment {
         ContentFragment fragment = new ContentFragment();
         fragment.setArguments(args);
         return fragment;
+    }
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        getLifecycle().addObserver(new LogLifecycleObserver());
     }
 
     @Nullable
@@ -45,4 +54,5 @@ public class ContentFragment extends Fragment {
 
         Log.e("mycroft", "onViewCreated");
     }
+
 }

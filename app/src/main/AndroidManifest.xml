@@ -13,7 +13,7 @@
         android:theme="@style/AppTheme"
         tools:replace="android:icon">
         <activity
-            android:name=".MainActivity"
+            android:name=".ViewPagerActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.DarkActionBar">
             <intent-filter>
@@ -22,6 +22,19 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".MainActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.DarkActionBar">
+            <!--
+                        <intent-filter>
+                            <action android:name="android.intent.action.MAIN" />
+                            <action android:name="android.intent.action.VIEW" />
+
+                            <category android:name="android.intent.category.LAUNCHER" />
+                        </intent-filter>
+            -->
         </activity>
     </application>
 
