@@ -28,8 +28,6 @@ public class ViewPager2Activity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        Logger.addLogAdapter(new AndroidLogAdapter());
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_pager2);
         mViewPager2 = findViewById(R.id.view_pager2);

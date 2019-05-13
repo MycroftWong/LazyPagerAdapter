@@ -1,8 +1,12 @@
 package com.mycroft.sample;
 
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 
-import androidx.appcompat.app.AppCompatActivity;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
@@ -14,20 +18,37 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * 使用新的{@link androidx.fragment.app.FragmentPagerAdapter}
- *
  * @author mycroft
  */
-public class ViewPagerActivity extends AppCompatActivity {
+public class ViewPagerFragment extends Fragment {
+
+    public static ViewPagerFragment newInstance() {
+
+        Bundle args = new Bundle();
+
+        ViewPagerFragment fragment = new ViewPagerFragment();
+        fragment.setArguments(args);
+        return fragment;
+    }
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_view_pager);
+    }
 
-        ViewPager viewPager = findViewById(R.id.view_pager);
-        TabLayout tabLayout = findViewById(R.id.tab_layout);
-        viewPager.setAdapter(new ContentPagerAdapter(getSupportFragmentManager(), mData));
+    @Nullable
+    @Override
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        return inflater.inflate(R.layout.activity_view_pager, container, false);
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        ViewPager viewPager = view.findViewById(R.id.view_pager);
+        TabLayout tabLayout = view.findViewById(R.id.tab_layout);
+        viewPager.setAdapter(new ContentPagerAdapter(getChildFragmentManager(), mData));
         tabLayout.setupWithViewPager(viewPager);
     }
 

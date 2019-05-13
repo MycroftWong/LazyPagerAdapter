@@ -12,6 +12,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.orhanobut.logger.Logger;
+
 import java.util.Random;
 
 /**
@@ -55,4 +57,15 @@ public class ContentFragment extends Fragment {
         Log.e("mycroft", "onViewCreated");
     }
 
+    @Override
+    public void onDestroyView() {
+        Logger.e("onDestroyView");
+        super.onDestroyView();
+    }
+
+    @Override
+    public void onDestroy() {
+        Logger.e("onDestroy");
+        super.onDestroy();
+    }
 }
